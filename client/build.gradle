@@ -1,0 +1,17 @@
+dependencies {
+  compile 'io.github.openfeign:feign-core'
+  compile 'org.apache.tomcat.embed:tomcat-embed-core'
+  compile 'org.springframework:spring-web'
+  compile 'org.springframework.security.oauth:spring-security-oauth2:2.3.4.RELEASE'
+  compile 'org.springframework.cloud:spring-cloud-openfeign-core:2.2.3.RELEASE'
+
+  compile project(":security")
+  compile project(":domain")
+}
+
+
+subprojects {
+  dependencies {
+    compile project(":client")
+  }
+}

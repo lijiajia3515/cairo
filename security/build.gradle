@@ -1,0 +1,9 @@
+dependencies {
+  compile project(":core")
+  compile 'org.springframework.security:spring-security-core'
+
+  compile 'org.springframework.security:spring-security-oauth2-jose'
+  compile 'org.springframework.security:spring-security-oauth2-resource-server'
+  compile 'org.springframework.security.oauth:spring-security-oauth2:2.3.4.RELEASE'
+
+}

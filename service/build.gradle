@@ -1,0 +1,22 @@
+dependencies {
+  compile project(":core")
+  compile project(":domain")
+  compile 'org.springframework.data:spring-data-commons'
+
+  compile 'org.springframework.security:spring-security-core'
+  compile 'org.springframework.security:spring-security-oauth2-jose'
+  compile 'org.springframework.security:spring-security-oauth2-resource-server'
+  compile 'org.springframework.security.oauth:spring-security-oauth2:2.3.4.RELEASE'
+
+}
+
+
+
+
+subprojects {
+  apply plugin: 'org.springframework.boot'
+  dependencies {
+    implementation project(":service")
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  }
+}
