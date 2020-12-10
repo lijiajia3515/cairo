@@ -1,6 +1,6 @@
 dependencies {
   compile project(":core")
-  implementation 'org.springframework.data:spring-data-commons'
+  compile 'org.springframework.data:spring-data-commons'
   compile 'org.springframework.security:spring-security-core'
 }
 

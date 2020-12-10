@@ -49,7 +49,7 @@ public class TreeConverter {
 	@SuppressWarnings("unchecked")
 	private static <Node extends TreeNode> Node findChildren(Node node, Collection<Node> nodes) {
 		nodes.stream()
-			.filter(node2 -> node2.parentId().equals(node.id()))
+			.filter(node2 -> node.id().equals(node2.parentId()))
 			.forEach(node2 -> node.subs().add(findChildren(node2, nodes)));
 		return node;
 	}

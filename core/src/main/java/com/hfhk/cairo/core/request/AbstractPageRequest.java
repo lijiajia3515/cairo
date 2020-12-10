@@ -11,7 +11,7 @@ import org.springframework.data.domain.Sort;
  */
 public abstract class AbstractPageRequest<T> {
 
-	private int page = 1;
+	private int page = 0;
 	private int size = 15;
 	private Sort sort = Sort.unsorted();
 
@@ -48,6 +48,6 @@ public abstract class AbstractPageRequest<T> {
 	}
 
 	public Pageable pageable() {
-		return PageRequest.of(page-1, size, sort);
+		return PageRequest.of(page, size, sort);
 	}
 }

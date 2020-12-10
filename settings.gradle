@@ -6,9 +6,9 @@ include 'security'
 include 'data'
 include 'data:data-mongo'
 
-include 'starter'
-include 'starter:starter-web'
-include 'starter:starter-mongo'
+// include 'starter'
+// include 'starter:starter-web'
+// include 'starter:starter-mongo'
 
 // include 'starter:starter-service'
 

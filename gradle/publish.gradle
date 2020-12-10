@@ -1,11 +1,11 @@
 // maven publish config
 apply plugin: "maven-publish"
+//apply plugin: "signing"
 
 publishing {
   repositories {
     maven {
       // change to point to your repo, e.g. http://my.org/repo
-      // url = "$buildDir/repo"
       def releasesRepoUrl = "https://packages.aliyun.com/maven/repository/2013218-release-Pelnyx/"
       def snapshotsRepoUrl = "https://packages.aliyun.com/maven/repository/2013218-snapshot-IQw4lU/"
 
@@ -14,15 +14,17 @@ publishing {
         password 'y2s3z0PFKR00'
       }
 
-      url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+      url = versionRelease ? releasesRepoUrl : snapshotsRepoUrl
 
     }
   }
   publications {
     mavenJava(MavenPublication) {
+      from components.java
+
       pom {
-        name = 'Cairo'
-        description = 'A concise description of my library'
+        name = "Cairo"
+        packaging = "jar"
         url = "https://codeup.aliyun.com/harpoon/cairo/cairo"
 
         scm {
@@ -72,7 +74,6 @@ publishing {
 //signing {
 //  sign publishing.publications.mavenJava
 //}
-
 javadoc {
   if (JavaVersion.current().isJava9Compatible()) {
     options.addBooleanOption('html5', true)

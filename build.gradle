@@ -1,5 +1,8 @@
 buildscript {
+  apply from: "${rootDir}/gradle/repositories.gradle"
   ext {
+    javaVersion = 11
+
     springVersion = "5.2.9.RELEASE"
     springBootVersion = "2.2.10.RELEASE"
     springCloudVersion = "Hoxton.SR6"
@@ -8,19 +11,10 @@ buildscript {
     hutoolVersion = "5.3.10"
     mybatisVersion = "3.4.0"
     easyexcelVersion = "2.2.5"
-  }
 
-  repositories {
-    maven {
-      url 'https://maven.aliyun.com/repository/public/'
-    }
-    maven {
-      url 'https://maven.aliyun.com/repository/spring/'
-    }
-    mavenLocal()
-    mavenCentral()
+    // tool variable
+    versionRelease = !version.endsWith('SNAPSHOT')
   }
-
 }
 
 plugins {
@@ -32,21 +26,33 @@ allprojects {
   apply from: "${rootDir}/gradle/repositories.gradle"
 
   group = 'com.hfhk.cairo'
+  // name = "Cairo"
+  description = "Hao Fang Software Projects"
 
   tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
   }
+
 }
 
 subprojects {
   apply plugin: 'java'
 
-  sourceCompatibility = '11'
-  targetCompatibility = '11'
+  sourceCompatibility = 11
+  targetCompatibility = 11
+
+  tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+  }
+
+  java {
+    withJavadocJar()
+    withSourcesJar()
+  }
 
   apply from: "${rootDir}/gradle/dependency-management.gradle"
   apply from: "${rootDir}/gradle/publish.gradle"
   apply from: "${rootDir}/gradle/lombok.gradle"
 }
-
-
