@@ -19,6 +19,7 @@ public abstract class AbstractPageRequest<T> {
 		return page;
 	}
 
+	@SuppressWarnings("unchecked")
 	public T setPage(int page) {
 		this.page = page;
 		return (T) this;
@@ -28,6 +29,7 @@ public abstract class AbstractPageRequest<T> {
 		return size;
 	}
 
+	@SuppressWarnings("unchecked")
 	public T setSize(int size) {
 		this.size = size;
 		return (T) this;
@@ -37,6 +39,7 @@ public abstract class AbstractPageRequest<T> {
 		return sort;
 	}
 
+	@SuppressWarnings("unchecked")
 	public T setSort(Sort sort) {
 		this.sort = sort;
 		return (T) this;
