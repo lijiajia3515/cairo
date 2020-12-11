@@ -42,11 +42,6 @@ public abstract class AbstractPageRequest<T> {
 		return (T) this;
 	}
 
-	public int offset() {
-		return Math.max(page - 1, 0);
-
-	}
-
 	public Pageable pageable() {
 		return PageRequest.of(page, size, sort);
 	}
