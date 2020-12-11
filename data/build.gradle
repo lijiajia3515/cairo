@@ -1,3 +1,9 @@
 dependencies {
+  compile project(":core")
+}
 
+subprojects {
+  dependencies {
+    compile project(":data")
+  }
 }
