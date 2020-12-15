@@ -145,14 +145,28 @@ public class StatusResult<T> implements IStatus, Result<T> {
 	}
 
 	/**
-	 * <p>buildBex.</p>
+	 * <p>buildUnknown.</p>
+	 */
+	public static Result<Object> buildUnknown() {
+		return buildFailed(Optional.empty().orElse(null));
+	}
+
+	/**
+	 * <p>buildUnknown.</p>
+	 */
+	public static <D> Result<D> buildUnknown(D data) {
+		return build(Status.Unknown, data);
+	}
+
+	/**
+	 * <p>buildEx.</p>
 	 */
 	public static Result<Object> buildEx(StatusException statusEx) {
 		return new StatusResult<>(statusEx.getStatus().isSuccess(), statusEx.getStatus().getCode(), statusEx.getMessage(), statusEx.getData());
 	}
 
 	/**
-	 * <p>buildBex.</p>
+	 * <p>buildEx.</p>
 	 */
 	public static <D> Result<D> buildError(StatusException statusEx, D data) {
 		return new StatusResult<>(statusEx.getStatus().isSuccess(), statusEx.getStatus().getCode(), statusEx.getMessage(), data);
