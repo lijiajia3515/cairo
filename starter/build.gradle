@@ -1,4 +1,0 @@
-allprojects {
-  group = 'com.hfhk.cairo.starter'
-}
-

@@ -1,4 +1,0 @@
-# Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.hfhk.harpoon.starter.service.autoconfigure.CairoSecurityConfiguration,\
-  com.hfhk.harpoon.starter.service.autoconfigure.CairoSecurityAuthenticationConfiguration
