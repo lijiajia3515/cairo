@@ -1,4 +1,4 @@
-package com.hfhk.cairo.data.mongo;
+package com.hfhk.cairo.mongo;
 
 
 import lombok.AllArgsConstructor;
@@ -9,7 +9,6 @@ import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.time.LocalDateTime;
 import java.time.LocalDateTime;
 
 /**

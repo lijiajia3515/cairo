@@ -5,6 +5,7 @@ include 'security'
 
 include 'data'
 include 'data:data-mongo'
+include 'mongo'
 
 // include 'starter'
 // include 'starter:starter-web'

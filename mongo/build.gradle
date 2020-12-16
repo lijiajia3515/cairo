@@ -1,5 +1,5 @@
 dependencies {
   compile project(":core")
   compile 'org.springframework.data:spring-data-commons'
-
+  compile 'org.springframework.security:spring-security-core'
 }
