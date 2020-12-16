@@ -1,4 +1,4 @@
-package com.hfhk.cairo.mongo;
+package com.hfhk.cairo.mongo.data;
 
 
 import lombok.AllArgsConstructor;
@@ -6,13 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
 /**
- * 元数据 - 创建信息
+ * 元数据 - 更新时间
  */
 @Data
 @Accessors(chain = true)
@@ -20,10 +20,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Created {
-	@CreatedBy
+public class LastModified {
+	@LastModifiedBy
 	private String uid;
 
-	@CreatedDate
+	@LastModifiedDate
 	private LocalDateTime at;
 }

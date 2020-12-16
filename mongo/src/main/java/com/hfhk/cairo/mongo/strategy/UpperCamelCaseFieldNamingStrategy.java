@@ -1,4 +1,4 @@
-package com.hfhk.cairo.mongo;
+package com.hfhk.cairo.mongo.strategy;
 
 import org.springframework.data.mapping.model.CamelCaseSplittingFieldNamingStrategy;
 
@@ -6,7 +6,7 @@ import org.springframework.data.mapping.model.CamelCaseSplittingFieldNamingStrat
  * 大写驼峰字段命名策略
  */
 public class UpperCamelCaseFieldNamingStrategy extends CamelCaseSplittingFieldNamingStrategy {
-	
+
 	public UpperCamelCaseFieldNamingStrategy() {
 		super("");
 	}

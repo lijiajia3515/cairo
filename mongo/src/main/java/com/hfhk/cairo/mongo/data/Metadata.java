@@ -1,4 +1,4 @@
-package com.hfhk.cairo.mongo;
+package com.hfhk.cairo.mongo.data;
 
 import com.hfhk.cairo.core.Constants;
 import lombok.AllArgsConstructor;
