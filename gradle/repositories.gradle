@@ -9,7 +9,7 @@ repositories {
   }
 
   maven {
-    url 'https://maven.aliyun.com/repository/grails-spring'
+    url 'https://maven.aliyun.com/repository/spring'
   }
 
   if (project.hasProperty('repository.release.url')) {
