@@ -13,7 +13,7 @@ public class UpperCamelCaseFieldNamingStrategy extends CamelCaseSplittingFieldNa
 
 	@Override
 	protected String preparePart(String part) {
-		return part.substring(0, 1).toUpperCase().concat(part.concat(part.substring(1)));
+		return part.substring(0, 1).toUpperCase().concat(part.substring(1));
 	}
 
 }
