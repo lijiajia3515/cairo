@@ -51,32 +51,32 @@ public abstract class CairoExpressionUtils {
 		return false;
 	}
 
-	public static boolean hasAnyScope(Authentication authentication, String[] scopes) {
-		if (authentication instanceof CairoAuthenticationToken) {
-			Collection<String> assigned = ((CairoAuthenticationToken) authentication).getClient().getScopes();
-			for (String scope : scopes) {
-				if (assigned.contains(scope)) {
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
-	public static boolean hasAnyScopeMatching(Authentication authentication, String[] scopesRegex) {
-		if (authentication instanceof CairoAuthenticationToken) {
-			Collection<String> spaces = ((CairoAuthenticationToken) authentication).getClient().getScopes();
-			for (String scope : spaces) {
-				for (String regex : scopesRegex) {
-					if (scope.matches(regex)) {
-						return true;
-					}
-				}
-			}
-		}
-
-		return false;
-	}
+	//public static boolean hasAnyScope(Authentication authentication, String[] scopes) {
+	//	if (authentication instanceof CairoAuthenticationToken) {
+	//		Collection<String> assigned = ((CairoAuthenticationToken) authentication).getClient().getScopes();
+	//		for (String scope : scopes) {
+	//			if (assigned.contains(scope)) {
+	//				return true;
+	//			}
+	//		}
+	//	}
+	//
+	//	return false;
+	//}
+	//
+	//public static boolean hasAnyScopeMatching(Authentication authentication, String[] scopesRegex) {
+	//	if (authentication instanceof CairoAuthenticationToken) {
+	//		Collection<String> spaces = ((CairoAuthenticationToken) authentication).getClient().getScopes();
+	//		for (String scope : spaces) {
+	//			for (String regex : scopesRegex) {
+	//				if (scope.matches(regex)) {
+	//					return true;
+	//				}
+	//			}
+	//		}
+	//	}
+	//
+	//	return false;
+	//}
 
 }
