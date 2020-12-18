@@ -44,9 +44,8 @@ public class CairoWebSecurityExpressionHandler extends DefaultWebSecurityExpress
 	protected StandardEvaluationContext createEvaluationContextInternal(Authentication authentication,
 																		FilterInvocation invocation) {
 		StandardEvaluationContext ec = super.createEvaluationContextInternal(authentication, invocation);
-		// ec.setVariable("oauth2", new OAuth2SecurityExpressionMethods(authentication));
-		// ec.setVariable("harpoon", new HarpoonSecurityExpressionMethods(authentication));
-		ec.setVariable("oauth2", new CairoSecurityExpressionMethods(authentication));
+		ec.setVariable("oauth2", new OAuth2SecurityExpressionMethods(authentication));
+		ec.setVariable("cairo", new CairoSecurityExpressionMethods(authentication));
 		return ec;
 	}
 }

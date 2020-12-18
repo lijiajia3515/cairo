@@ -8,6 +8,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * 用户
@@ -53,10 +54,10 @@ public class User implements Serializable {
 	/**
 	 * 角色
 	 */
-	private Collection<Role> roles;
+	private Map<String, Collection<Role>> roles;
 
 	/**
 	 * 部门
 	 */
-	private Collection<Department> departments;
+	private Map<String, Collection<Department>> departments;
 }

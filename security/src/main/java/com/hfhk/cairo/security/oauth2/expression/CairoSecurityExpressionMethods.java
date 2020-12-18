@@ -75,15 +75,15 @@ public class CairoSecurityExpressionMethods {
 		return CairoExpressionUtils.clientHasAnyRole(authentication, roles);
 	}
 
-	/**
-	 * Check if the current OAuth2 authentication has the scope specified.
-	 *
-	 * @param scope the scope to check
-	 * @return true if the OAuth2 authentication has the required scope
-	 */
-	public boolean hasScope(String scope) {
-		return hasAnyScope(scope);
-	}
+	///**
+	// * Check if the current OAuth2 authentication has the scope specified.
+	// *
+	// * @param scope the scope to check
+	// * @return true if the OAuth2 authentication has the required scope
+	// */
+	//public boolean hasScope(String scope) {
+	//	return hasAnyScope(scope);
+	//}
 
 	/**
 	 * Check if the current OAuth2 authentication has one of the scopes specified.
@@ -92,13 +92,13 @@ public class CairoSecurityExpressionMethods {
 	 * @return true if the OAuth2 token has one of these scopes
 	 * @throws AccessDeniedException if the scope is invalid and we the flag is set to throw the exception
 	 */
-	public boolean hasAnyScope(String... scopes) {
-		boolean result = CairoExpressionUtils.hasAnyScope(authentication, scopes);
-		if (!result) {
-			missingScopes.addAll(Arrays.asList(scopes));
-		}
-		return result;
-	}
+	// public boolean hasAnyScope(String... scopes) {
+	// 	boolean result = CairoExpressionUtils.hasAnyScope(authentication, scopes);
+	// 	if (!result) {
+	// 		missingScopes.addAll(Arrays.asList(scopes));
+	// 	}
+	// 	return result;
+	// }
 
 	/**
 	 * Check if the current OAuth2 authentication has one of the scopes matching a specified regex expression.
@@ -110,9 +110,9 @@ public class CairoSecurityExpressionMethods {
 	 * @param scopeRegex the scope regex to match
 	 * @return true if the OAuth2 authentication has the required scope
 	 */
-	public boolean hasScopeMatching(String scopeRegex) {
-		return hasAnyScopeMatching(scopeRegex);
-	}
+	//public boolean hasScopeMatching(String scopeRegex) {
+	//	return hasAnyScopeMatching(scopeRegex);
+	//}
 
 	/**
 	 * Check if the current OAuth2 authentication has one of the scopes matching a specified regex expression.
@@ -125,14 +125,14 @@ public class CairoSecurityExpressionMethods {
 	 * @return true if the OAuth2 token has one of these scopes
 	 * @throws AccessDeniedException if the scope is invalid and we the flag is set to throw the exception
 	 */
-	public boolean hasAnyScopeMatching(String... scopesRegex) {
+	/*public boolean hasAnyScopeMatching(String... scopesRegex) {
 
 		boolean result = CairoExpressionUtils.hasAnyScopeMatching(authentication, scopesRegex);
 		if (!result) {
 			missingScopes.addAll(Arrays.asList(scopesRegex));
 		}
 		return result;
-	}
+	}*/
 
 	/**
 	 * Deny access to oauth requests, so used for example to only allow web UI users to access a resource.
