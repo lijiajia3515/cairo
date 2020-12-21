@@ -4,7 +4,10 @@ plugins {
 
 dependencies {
   compile 'com.fasterxml.jackson.core:jackson-annotations'
-  compile "cn.hutool:hutool-all:${hutoolVersion}"
 
   compile 'org.springframework.data:spring-data-commons'
+
+  compile "cn.hutool:hutool-all:${hutoolVersion}"
+
+
 }
