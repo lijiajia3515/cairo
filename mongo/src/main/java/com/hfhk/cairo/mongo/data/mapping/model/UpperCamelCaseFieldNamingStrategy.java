@@ -1,4 +1,4 @@
-package com.hfhk.cairo.mongo.strategy;
+package com.hfhk.cairo.mongo.data.mapping.model;
 
 import org.springframework.data.mapping.model.CamelCaseSplittingFieldNamingStrategy;
 

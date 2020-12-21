@@ -3,6 +3,7 @@ package com.hfhk.cairo.security.oauth2.server.resource.authentication;
 
 import com.hfhk.cairo.security.authentication.User;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.core.oidc.IdTokenClaimNames;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 
@@ -63,7 +64,12 @@ public class CairoAuthenticationToken extends JwtAuthenticationToken {
 		this.user = user;
 	}
 
+	@Override
 	public Collection<GrantedAuthority> getAuthorities() {
 		return super.getAuthorities();
+	}
+
+	public String getClient() {
+		return super.getToken().getClaimAsString(IdTokenClaimNames.AZP);
 	}
 }
