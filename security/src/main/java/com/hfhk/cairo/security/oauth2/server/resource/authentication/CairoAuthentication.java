@@ -3,7 +3,6 @@ package com.hfhk.cairo.security.oauth2.server.resource.authentication;
 
 import com.hfhk.cairo.security.authentication.User;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.oauth2.core.oidc.IdTokenClaimNames;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 
@@ -11,15 +10,15 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Cairo Token(Jwt OAuth2 Token)
+ * Cairo Authentication
  */
-public class CairoAuthenticationToken extends JwtAuthenticationToken {
+public class CairoAuthentication extends JwtAuthenticationToken {
 	private User user;
 
 	/**
 	 * @param jwt jwt
 	 */
-	public CairoAuthenticationToken(Jwt jwt) {
+	public CairoAuthentication(Jwt jwt) {
 		super(jwt);
 	}
 
@@ -27,7 +26,7 @@ public class CairoAuthenticationToken extends JwtAuthenticationToken {
 	 * @param jwt         jwt
 	 * @param authorities authorities
 	 */
-	public CairoAuthenticationToken(Jwt jwt, Collection<? extends GrantedAuthority> authorities) {
+	public CairoAuthentication(Jwt jwt, Collection<? extends GrantedAuthority> authorities) {
 		super(jwt, authorities);
 	}
 
@@ -35,7 +34,7 @@ public class CairoAuthenticationToken extends JwtAuthenticationToken {
 	 * @param jwt         jwt
 	 * @param authorities authorities
 	 */
-	public CairoAuthenticationToken(Jwt jwt, Collection<? extends GrantedAuthority> authorities, User user) {
+	public CairoAuthentication(Jwt jwt, Collection<? extends GrantedAuthority> authorities, User user) {
 		super(jwt, authorities);
 		this.user = user;
 	}
@@ -68,8 +67,5 @@ public class CairoAuthenticationToken extends JwtAuthenticationToken {
 	public Collection<GrantedAuthority> getAuthorities() {
 		return super.getAuthorities();
 	}
-
-	public String getClient() {
-		return super.getToken().getClaimAsString(IdTokenClaimNames.AZP);
-	}
+	
 }

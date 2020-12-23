@@ -1,6 +1,6 @@
 package com.hfhk.cairo.security.oauth2.expression;
 
-import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthenticationToken;
+import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthentication;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -15,7 +15,7 @@ public abstract class CairoExpressionUtils {
 	private static final String SPACE_PREFIX = "SPACE_";
 
 	public static boolean clientHasAnyRole(Authentication authentication, String... roles) {
-		if (authentication instanceof CairoAuthenticationToken) {
+		if (authentication instanceof CairoAuthentication) {
 			Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 			if (authorities != null) {
 				Set<String> roleSet = AuthorityUtils.authorityListToSet(authorities);
@@ -31,12 +31,12 @@ public abstract class CairoExpressionUtils {
 	}
 
 	public static boolean isOAuth(Authentication authentication) {
-		return authentication instanceof CairoAuthenticationToken;
+		return authentication instanceof CairoAuthentication;
 	}
 
 	public static boolean isOAuthClientAuth(Authentication authentication) {
-		if (authentication instanceof CairoAuthenticationToken) {
-			return authentication.isAuthenticated() && ((CairoAuthenticationToken) authentication).getUser() == null;
+		if (authentication instanceof CairoAuthentication) {
+			return authentication.isAuthenticated() && ((CairoAuthentication) authentication).getUser() == null;
 		}
 
 		return false;
@@ -44,8 +44,8 @@ public abstract class CairoExpressionUtils {
 
 	public static boolean isOAuthUserAuth(Authentication authentication) {
 
-		if (authentication instanceof CairoAuthenticationToken) {
-			return authentication.isAuthenticated() && ((CairoAuthenticationToken) authentication).getUser() != null;
+		if (authentication instanceof CairoAuthentication) {
+			return authentication.isAuthenticated() && ((CairoAuthentication) authentication).getUser() != null;
 		}
 
 		return false;
