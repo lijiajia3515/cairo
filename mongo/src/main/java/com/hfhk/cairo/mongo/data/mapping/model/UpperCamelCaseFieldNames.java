@@ -4,9 +4,9 @@ package com.hfhk.cairo.mongo.data.mapping.model;
  * 字段常亮
  */
 public abstract class UpperCamelCaseFieldNames {
-	public static final String _ID = "_id";
+	public final String _ID = "_id";
 
-	public static final Metadata Metadata = new Metadata();
+	public final Metadata Metadata = new Metadata();
 
 	public static class Metadata {
 		public final Created Created = new Created();
