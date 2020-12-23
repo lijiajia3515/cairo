@@ -1,8 +1,8 @@
 package com.hfhk.cairo.core.result;
 
 import com.hfhk.cairo.core.exception.StatusException;
-import com.hfhk.cairo.core.status.IStatus;
 import com.hfhk.cairo.core.status.Status;
+import com.hfhk.cairo.core.status.DefaultStatus;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -72,7 +72,7 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * build
 	 */
-	public StatusResult(IStatus status) {
+	public StatusResult(Status status) {
 		this.success = status.success();
 		this.code = status.code();
 		this.message = status.message();
@@ -81,7 +81,7 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * <p>build.</p>
 	 */
-	public StatusResult(IStatus status, T data) {
+	public StatusResult(Status status, T data) {
 		this.success = status.success();
 		this.code = status.code();
 		this.message = status.message();
@@ -91,14 +91,14 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * <p>build.</p>
 	 */
-	public static Result<Object> build(IStatus status) {
+	public static Result<Object> build(Status status) {
 		return new StatusResult<>(status);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public static <D> Result<D> build(IStatus status, D data) {
+	public static <D> Result<D> build(Status status, D data) {
 		return new StatusResult<>(status, data);
 	}
 
@@ -127,7 +127,7 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildSuccess.</p>
 	 */
 	public static <D> Result<D> buildSuccess(D data) {
-		return build(Status.Success, data);
+		return build(DefaultStatus.Success, data);
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildFailed.</p>
 	 */
 	public static <D> Result<D> buildFailed(D data) {
-		return build(Status.Failed, data);
+		return build(DefaultStatus.Failed, data);
 	}
 
 	/**
@@ -155,7 +155,7 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildUnknown.</p>
 	 */
 	public static <D> Result<D> buildUnknown(D data) {
-		return build(Status.Unknown, data);
+		return build(DefaultStatus.Unknown, data);
 	}
 
 	/**

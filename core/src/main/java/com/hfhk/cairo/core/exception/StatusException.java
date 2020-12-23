@@ -1,7 +1,7 @@
 package com.hfhk.cairo.core.exception;
 
 
-import com.hfhk.cairo.core.status.IStatus;
+import com.hfhk.cairo.core.status.Status;
 
 /**
  * 业务 异常包装类
@@ -9,7 +9,7 @@ import com.hfhk.cairo.core.status.IStatus;
  * N: N种错误结果
  */
 public class StatusException extends RuntimeException {
-	private final IStatus status;
+	private final Status status;
 	private final Object data;
 
 	/**
@@ -17,13 +17,13 @@ public class StatusException extends RuntimeException {
 	 *
 	 * @param status 业务
 	 */
-	public StatusException(IStatus status) {
+	public StatusException(Status status) {
 		super(status.message());
 		this.status = status;
 		this.data = null;
 	}
 
-	public StatusException(IStatus status, Object data) {
+	public StatusException(Status status, Object data) {
 		super(status.message());
 		this.status = status;
 		this.data = data;
@@ -35,7 +35,7 @@ public class StatusException extends RuntimeException {
 	 * @param status        业务
 	 * @param detailMessage 异常消息
 	 */
-	public StatusException(IStatus status, Object data, String detailMessage) {
+	public StatusException(Status status, Object data, String detailMessage) {
 		super(detailMessage);
 		this.status = status;
 		this.data = null;
@@ -47,7 +47,7 @@ public class StatusException extends RuntimeException {
 	 * @param status        业务
 	 * @param detailMessage 异常消息
 	 */
-	public StatusException(IStatus status, Object data, String detailMessage, Throwable throwable) {
+	public StatusException(Status status, Object data, String detailMessage, Throwable throwable) {
 		super(detailMessage, throwable);
 		this.status = status;
 		this.data = data;
@@ -71,7 +71,7 @@ public class StatusException extends RuntimeException {
 	 *
 	 * @return 业务编码
 	 */
-	public IStatus getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 

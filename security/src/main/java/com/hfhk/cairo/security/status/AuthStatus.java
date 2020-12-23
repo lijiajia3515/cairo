@@ -1,12 +1,12 @@
 package com.hfhk.cairo.security.status;
 
-import com.hfhk.cairo.core.status.IStatus;
+import com.hfhk.cairo.core.status.Status;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
 @Getter
 @Accessors(chain = true, fluent = true)
-public enum AuthStatus implements IStatus {
+public enum AuthStatus implements Status {
 	/**
 	 * 凭证错误
 	 */

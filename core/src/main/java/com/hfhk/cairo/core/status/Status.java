@@ -1,37 +1,28 @@
 package com.hfhk.cairo.core.status;
 
-
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
 /**
- * 默认业务结果
+ * 业务
  */
-@Getter
-@Accessors(fluent = true)
-public enum Status implements IStatus {
-	/**
-	 * 业务默认成功结果
-	 */
-	Success(true, "ok"),
+public interface Status {
 
 	/**
-	 * 业务默认失败结果
+	 * 业务执行结果
+	 *
+	 * @return 业务执行结果
 	 */
-	Failed(false, "操作失败"),
+	boolean success();
 
 	/**
-	 * 未知异常
+	 * 状态码
+	 *
+	 * @return 状态码
 	 */
-	Unknown(false, "未知异常,请联系管理员");
+	String code();
 
-	public final boolean success;
-	public final String code = name();
-	public final String message;
-
-
-	Status(boolean success, String message) {
-		this.success = success;
-		this.message = message;
-	}
+	/**
+	 * 消息
+	 *
+	 * @return 消息
+	 */
+	String message();
 }

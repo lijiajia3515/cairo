@@ -1,12 +1,12 @@
 package com.hfhk.cairo.security.status;
 
-import com.hfhk.cairo.core.status.IStatus;
+import com.hfhk.cairo.core.status.Status;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
 @Getter
 @Accessors(chain = true, fluent = true)
-public enum ClientStatus implements IStatus {
+public enum ClientStatus implements Status {
 	Required(false, "client 不能为空");
 
 	private final String code = "Client".concat(name());
