@@ -13,7 +13,7 @@ import java.util.Optional;
  */
 @Getter
 @ToString
-public class StatusResult<T> implements IStatus, Result<T> {
+public class StatusResult<T> implements Result<T> {
 	/**
 	 * 成功状态
 	 */
@@ -73,18 +73,18 @@ public class StatusResult<T> implements IStatus, Result<T> {
 	 * build
 	 */
 	public StatusResult(IStatus status) {
-		this.success = status.isSuccess();
-		this.code = status.getCode();
-		this.message = status.getMessage();
+		this.success = status.success();
+		this.code = status.code();
+		this.message = status.message();
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
 	public StatusResult(IStatus status, T data) {
-		this.success = status.isSuccess();
-		this.code = status.getCode();
-		this.message = status.getMessage();
+		this.success = status.success();
+		this.code = status.code();
+		this.message = status.message();
 		this.data = data;
 	}
 
@@ -162,13 +162,13 @@ public class StatusResult<T> implements IStatus, Result<T> {
 	 * <p>buildEx.</p>
 	 */
 	public static Result<Object> buildEx(StatusException statusEx) {
-		return new StatusResult<>(statusEx.getStatus().isSuccess(), statusEx.getStatus().getCode(), statusEx.getMessage(), statusEx.getData());
+		return new StatusResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), statusEx.getData());
 	}
 
 	/**
 	 * <p>buildEx.</p>
 	 */
 	public static <D> Result<D> buildError(StatusException statusEx, D data) {
-		return new StatusResult<>(statusEx.getStatus().isSuccess(), statusEx.getStatus().getCode(), statusEx.getMessage(), data);
+		return new StatusResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), data);
 	}
 }

@@ -10,19 +10,19 @@ public interface IStatus {
 	 *
 	 * @return 业务执行结果
 	 */
-	boolean isSuccess();
+	boolean success();
 
 	/**
 	 * 状态码
 	 *
 	 * @return 状态码
 	 */
-	String getCode();
+	String code();
 
 	/**
 	 * 消息
 	 *
 	 * @return 消息
 	 */
-	String getMessage();
+	String message();
 }

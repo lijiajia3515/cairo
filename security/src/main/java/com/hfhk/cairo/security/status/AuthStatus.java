@@ -2,8 +2,10 @@ package com.hfhk.cairo.security.status;
 
 import com.hfhk.cairo.core.status.IStatus;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 @Getter
+@Accessors(chain = true, fluent = true)
 public enum AuthStatus implements IStatus {
 	/**
 	 * 凭证错误
@@ -29,16 +31,14 @@ public enum AuthStatus implements IStatus {
 	 */
 	AccessDenied(false, "权限不足");
 
+
+	private final String code = "Auth".concat(name());
 	private final boolean success;
 	private final String message;
 
 	AuthStatus(boolean success, String message) {
 		this.success = success;
-		this.message = message;
-	}
 
-	@Override
-	public String getCode() {
-		return ("Auth" + name()).toLowerCase();
+		this.message = message;
 	}
 }

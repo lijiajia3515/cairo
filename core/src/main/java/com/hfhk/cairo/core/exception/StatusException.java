@@ -18,13 +18,13 @@ public class StatusException extends RuntimeException {
 	 * @param status 业务
 	 */
 	public StatusException(IStatus status) {
-		super(status.getMessage());
+		super(status.message());
 		this.status = status;
 		this.data = null;
 	}
 
 	public StatusException(IStatus status, Object data) {
-		super(status.getMessage());
+		super(status.message());
 		this.status = status;
 		this.data = data;
 	}
@@ -57,8 +57,8 @@ public class StatusException extends RuntimeException {
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		if (status != null) {
-			str.append("Metadata==> Code:").append(status.getCode())
-				.append(" Message: ").append(status.getMessage())
+			str.append("Metadata==> Code:").append(status.code())
+				.append(" Message: ").append(status.message())
 				.append("\n");
 		}
 		str.append(super.toString());
