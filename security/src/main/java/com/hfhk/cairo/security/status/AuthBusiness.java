@@ -1,12 +1,12 @@
 package com.hfhk.cairo.security.status;
 
-import com.hfhk.cairo.core.status.Status;
+import com.hfhk.cairo.core.business.Business;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
 @Getter
 @Accessors(chain = true, fluent = true)
-public enum AuthStatus implements Status {
+public enum AuthBusiness implements Business {
 	/**
 	 * 凭证错误
 	 */
@@ -36,7 +36,7 @@ public enum AuthStatus implements Status {
 	private final boolean success;
 	private final String message;
 
-	AuthStatus(boolean success, String message) {
+	AuthBusiness(boolean success, String message) {
 		this.success = success;
 
 		this.message = message;

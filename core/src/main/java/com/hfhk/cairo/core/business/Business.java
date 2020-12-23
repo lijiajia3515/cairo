@@ -1,9 +1,9 @@
-package com.hfhk.cairo.core.status;
+package com.hfhk.cairo.core.business;
 
 /**
  * 业务
  */
-public interface Status {
+public interface Business {
 
 	/**
 	 * 业务执行结果

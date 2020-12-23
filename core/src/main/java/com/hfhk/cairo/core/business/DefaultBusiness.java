@@ -1,4 +1,4 @@
-package com.hfhk.cairo.core.status;
+package com.hfhk.cairo.core.business;
 
 
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
  */
 @Getter
 @Accessors(fluent = true)
-public enum DefaultStatus implements Status {
+public enum DefaultBusiness implements Business {
 	/**
 	 * 业务默认成功结果
 	 */
@@ -30,7 +30,7 @@ public enum DefaultStatus implements Status {
 	public final String message;
 
 
-	DefaultStatus(boolean success, String message) {
+	DefaultBusiness(boolean success, String message) {
 		this.success = success;
 		this.message = message;
 	}

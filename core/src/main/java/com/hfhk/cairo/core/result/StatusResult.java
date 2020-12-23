@@ -1,8 +1,8 @@
 package com.hfhk.cairo.core.result;
 
-import com.hfhk.cairo.core.exception.StatusException;
-import com.hfhk.cairo.core.status.Status;
-import com.hfhk.cairo.core.status.DefaultStatus;
+import com.hfhk.cairo.core.exception.BusinessException;
+import com.hfhk.cairo.core.business.Business;
+import com.hfhk.cairo.core.business.DefaultBusiness;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -72,34 +72,34 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * build
 	 */
-	public StatusResult(Status status) {
-		this.success = status.success();
-		this.code = status.code();
-		this.message = status.message();
+	public StatusResult(Business business) {
+		this.success = business.success();
+		this.code = business.code();
+		this.message = business.message();
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public StatusResult(Status status, T data) {
-		this.success = status.success();
-		this.code = status.code();
-		this.message = status.message();
+	public StatusResult(Business business, T data) {
+		this.success = business.success();
+		this.code = business.code();
+		this.message = business.message();
 		this.data = data;
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public static Result<Object> build(Status status) {
-		return new StatusResult<>(status);
+	public static Result<Object> build(Business business) {
+		return new StatusResult<>(business);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public static <D> Result<D> build(Status status, D data) {
-		return new StatusResult<>(status, data);
+	public static <D> Result<D> build(Business business, D data) {
+		return new StatusResult<>(business, data);
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildSuccess.</p>
 	 */
 	public static <D> Result<D> buildSuccess(D data) {
-		return build(DefaultStatus.Success, data);
+		return build(DefaultBusiness.Success, data);
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildFailed.</p>
 	 */
 	public static <D> Result<D> buildFailed(D data) {
-		return build(DefaultStatus.Failed, data);
+		return build(DefaultBusiness.Failed, data);
 	}
 
 	/**
@@ -155,20 +155,20 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildUnknown.</p>
 	 */
 	public static <D> Result<D> buildUnknown(D data) {
-		return build(DefaultStatus.Unknown, data);
+		return build(DefaultBusiness.Unknown, data);
 	}
 
 	/**
 	 * <p>buildEx.</p>
 	 */
-	public static Result<Object> buildEx(StatusException statusEx) {
+	public static Result<Object> buildEx(BusinessException statusEx) {
 		return new StatusResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), statusEx.getData());
 	}
 
 	/**
 	 * <p>buildEx.</p>
 	 */
-	public static <D> Result<D> buildError(StatusException statusEx, D data) {
+	public static <D> Result<D> buildError(BusinessException statusEx, D data) {
 		return new StatusResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), data);
 	}
 }
