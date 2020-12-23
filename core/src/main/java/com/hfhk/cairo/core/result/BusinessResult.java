@@ -13,7 +13,7 @@ import java.util.Optional;
  */
 @Getter
 @ToString
-public class StatusResult<T> implements Result<T> {
+public class BusinessResult<T> implements Result<T> {
 	/**
 	 * 成功状态
 	 */
@@ -37,7 +37,7 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * 保留默认构造函数
 	 */
-	public StatusResult() {
+	public BusinessResult() {
 
 	}
 
@@ -48,7 +48,7 @@ public class StatusResult<T> implements Result<T> {
 	 * @param code    code
 	 * @param message message
 	 */
-	public StatusResult(boolean success, String code, String message) {
+	public BusinessResult(boolean success, String code, String message) {
 		this.success = success;
 		this.code = code;
 		this.message = message;
@@ -62,7 +62,7 @@ public class StatusResult<T> implements Result<T> {
 	 * @param message message
 	 * @param data    data
 	 */
-	public StatusResult(boolean success, String code, String message, T data) {
+	public BusinessResult(boolean success, String code, String message, T data) {
 		this.success = success;
 		this.code = code;
 		this.message = message;
@@ -72,7 +72,7 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * build
 	 */
-	public StatusResult(Business business) {
+	public BusinessResult(Business business) {
 		this.success = business.success();
 		this.code = business.code();
 		this.message = business.message();
@@ -81,7 +81,7 @@ public class StatusResult<T> implements Result<T> {
 	/**
 	 * <p>build.</p>
 	 */
-	public StatusResult(Business business, T data) {
+	public BusinessResult(Business business, T data) {
 		this.success = business.success();
 		this.code = business.code();
 		this.message = business.message();
@@ -92,28 +92,28 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>build.</p>
 	 */
 	public static Result<Object> build(Business business) {
-		return new StatusResult<>(business);
+		return new BusinessResult<>(business);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
 	public static <D> Result<D> build(Business business, D data) {
-		return new StatusResult<>(business, data);
+		return new BusinessResult<>(business, data);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
 	public static Result<Object> build(boolean success, String code, String msg) {
-		return new StatusResult<>(success, code, msg);
+		return new BusinessResult<>(success, code, msg);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
 	public static <D> Result<D> build(boolean success, String code, String msg, D data) {
-		return new StatusResult<>(success, code, msg, data);
+		return new BusinessResult<>(success, code, msg, data);
 	}
 
 	/**
@@ -162,13 +162,13 @@ public class StatusResult<T> implements Result<T> {
 	 * <p>buildEx.</p>
 	 */
 	public static Result<Object> buildEx(BusinessException statusEx) {
-		return new StatusResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), statusEx.getData());
+		return new BusinessResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), statusEx.getData());
 	}
 
 	/**
 	 * <p>buildEx.</p>
 	 */
 	public static <D> Result<D> buildError(BusinessException statusEx, D data) {
-		return new StatusResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), data);
+		return new BusinessResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), data);
 	}
 }
