@@ -46,13 +46,13 @@ public class CairoAuthenticationToken extends JwtAuthenticationToken {
 	}
 
 	@Override
-	public String getPrincipal() {
-		return (String) super.getPrincipal();
+	public Jwt getPrincipal() {
+		return (Jwt) super.getPrincipal();
 	}
 
 	@Override
-	public String getCredentials() {
-		return (String) super.getCredentials();
+	public Jwt getCredentials() {
+		return (Jwt) super.getCredentials();
 	}
 
 
