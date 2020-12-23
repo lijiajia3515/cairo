@@ -5,21 +5,29 @@ import lombok.Getter;
 
 @Getter
 public enum AuthStatus implements IStatus {
-	NO(false, "未登录哦"),
+	/**
+	 * 凭证错误
+	 */
+	Bad(false, "凭证错误"),
 
-	BAD(false, "用户名密码错误"),
+	/**
+	 * 凭证必须
+	 */
+	AccessRequired(false, "访问凭证-缺失"),
 
-	ACCESS_TOKEN_EXPIRE(false, "access_token已过期"),
-	ACCESS_TOKEN_ILLEGAL(false, "access_token不合法"),
+	/**
+	 * 访问凭证错误
+	 */
+	AccessBad(false, "访问凭证-错误"),
+	/**
+	 * 访问
+	 */
+	AccessExpired(false, "访问凭证-已过期"),
 
-	REFRESH_TOKEN_EXPIRE(false, "refresh_token已过期"),
-	REFRESH_TOKEN_ILLEGAL(false, "refresh_token不合法"),
-
-	USER_NOT_EXISTS(false, "用户不存在"),
-	USER_DISABLE(false, "用户被禁止登录"),
-
-	ACCESS_DENE(false, "权限不足");
-
+	/**
+	 * 权限不足
+	 */
+	AccessDenied(false, "权限不足");
 
 	private final boolean success;
 	private final String message;
@@ -31,6 +39,6 @@ public enum AuthStatus implements IStatus {
 
 	@Override
 	public String getCode() {
-		return ("AUTH" + name()).toLowerCase();
+		return ("Auth" + name()).toLowerCase();
 	}
 }

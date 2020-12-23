@@ -3,7 +3,7 @@ package com.hfhk.cairo.mongo.data.mapping.model;
 /**
  * 字段常亮
  */
-public abstract class MongoUpperCamelCaseField {
+public abstract class UpperCamelCaseFieldNames {
 	public static final String _ID = "_id";
 
 	public static final Metadata Metadata = new Metadata();

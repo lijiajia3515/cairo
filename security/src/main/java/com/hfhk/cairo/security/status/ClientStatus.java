@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public enum ClientStatus implements IStatus {
-	REQUIRED(false, "client 不能为空");
+	Required(false, "client 不能为空");
 
 
 	private final boolean success;
@@ -18,6 +18,6 @@ public enum ClientStatus implements IStatus {
 
 	@Override
 	public String getCode() {
-		return ("client_".concat(name())).toLowerCase();
+		return ("Client".concat(name())).toLowerCase();
 	}
 }
