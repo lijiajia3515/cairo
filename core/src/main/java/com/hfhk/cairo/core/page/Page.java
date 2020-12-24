@@ -1,8 +1,8 @@
 package com.hfhk.cairo.core.page;
 
+import com.hfhk.cairo.core.request.PageRequest;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.springframework.data.domain.Pageable;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -26,15 +26,15 @@ public class Page<T> implements Serializable {
 		this.size = size;
 	}
 
-	public Page(Pageable pageable) {
-		this.page = pageable.getPageNumber();
-		this.size = pageable.getPageSize();
+	public Page(PageRequest request) {
+		this.page = request.getPage();
+		this.size = request.getSize();
 	}
 
-	public Page(Pageable pageable, List<T> content, long total) {
+	public Page(PageRequest page, List<T> content, long total) {
 		this.content = content;
-		this.page = pageable.getPageNumber();
-		this.size = pageable.getPageSize();
+		this.page = page.getPage();
+		this.size = page.getSize();
 		this.total = total;
 	}
 

@@ -22,17 +22,12 @@ public class Department {
 	private String id;
 
 	/**
-	 * Parent Id
+	 * Parent
 	 */
-	private String parentId;
+	private String parent;
 
 	/**
 	 * 部门名称
 	 */
 	private String name;
-
-	/**
-	 * 启用
-	 */
-	private Boolean enabled;
 }

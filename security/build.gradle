@@ -1,5 +1,6 @@
 dependencies {
   compile project(":core")
+  compile project(":domain")
 
   // security
   compile 'org.springframework.security:spring-security-core'

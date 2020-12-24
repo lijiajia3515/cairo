@@ -1,7 +1,7 @@
 package com.hfhk.cairo.security.oauth2.server.resource.authentication;
 
 
-import com.hfhk.cairo.security.authentication.User;
+import com.hfhk.cairo.security.oauth2.user.AuthPrincipal;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
@@ -13,30 +13,28 @@ import java.util.Map;
  * Cairo Authentication
  */
 public class CairoAuthentication extends JwtAuthenticationToken {
-	private User user;
 
 	/**
-	 * @param jwt jwt
+	 * @param principal principal
 	 */
-	public CairoAuthentication(Jwt jwt) {
-		super(jwt);
+	public CairoAuthentication(AuthPrincipal principal) {
+		super(principal);
 	}
 
 	/**
-	 * @param jwt         jwt
+	 * @param principal   principal
 	 * @param authorities authorities
 	 */
-	public CairoAuthentication(Jwt jwt, Collection<? extends GrantedAuthority> authorities) {
-		super(jwt, authorities);
+	public CairoAuthentication(Jwt principal, Collection<? extends GrantedAuthority> authorities) {
+		super(principal, authorities);
 	}
 
 	/**
-	 * @param jwt         jwt
+	 * @param principal   principal
 	 * @param authorities authorities
 	 */
-	public CairoAuthentication(Jwt jwt, Collection<? extends GrantedAuthority> authorities, User user) {
-		super(jwt, authorities);
-		this.user = user;
+	public CairoAuthentication(AuthPrincipal principal, Collection<? extends GrantedAuthority> authorities) {
+		super(principal, authorities);
 	}
 
 	@Override
@@ -45,27 +43,13 @@ public class CairoAuthentication extends JwtAuthenticationToken {
 	}
 
 	@Override
-	public Jwt getPrincipal() {
-		return (Jwt) super.getPrincipal();
+	public AuthPrincipal getPrincipal() {
+		return (AuthPrincipal) super.getPrincipal();
 	}
 
 	@Override
-	public Jwt getCredentials() {
-		return (Jwt) super.getCredentials();
+	public AuthPrincipal getCredentials() {
+		return (AuthPrincipal) super.getCredentials();
 	}
 
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	@Override
-	public Collection<GrantedAuthority> getAuthorities() {
-		return super.getAuthorities();
-	}
-	
 }

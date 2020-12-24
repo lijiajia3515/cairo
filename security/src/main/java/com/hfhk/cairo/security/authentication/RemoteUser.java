@@ -1,5 +1,6 @@
 package com.hfhk.cairo.security.authentication;
 
+import com.hfhk.cairo.domain.auth.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
