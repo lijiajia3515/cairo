@@ -3,6 +3,11 @@ dependencies {
   compile 'io.github.openfeign:feign-core'
   compile 'org.springframework.cloud:spring-cloud-openfeign-core'
 
+  // security
+  // implementation 'org.springframework.cloud:spring-cloud-starter-security'
+  implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+  // implementation 'org.springframework.security:spring-security-oauth2-client'
+
   // web
   compile 'org.apache.tomcat.embed:tomcat-embed-core'
   compile 'org.springframework:spring-web'

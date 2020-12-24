@@ -9,7 +9,8 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
- */
+ *//*
+
 package com.hfhk.cairo.security.oauth2.expression;
 
 import org.springframework.expression.ExpressionParser;
@@ -20,6 +21,7 @@ import org.springframework.security.oauth2.provider.expression.OAuth2SecurityExp
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 
+*/
 /**
  * <p>
  * A security expression handler that can handle default web security expressions plus the set provided by
@@ -34,7 +36,8 @@ import org.springframework.security.web.access.expression.DefaultWebSecurityExpr
  * @author Dave Syer
  * @author Rob Winch
  * @see OAuth2ExpressionParser
- */
+ *//*
+
 public class CairoWebSecurityExpressionHandler extends DefaultWebSecurityExpressionHandler {
 	public CairoWebSecurityExpressionHandler() {
 		setExpressionParser(new OAuth2ExpressionParser(getExpressionParser()));
@@ -49,3 +52,4 @@ public class CairoWebSecurityExpressionHandler extends DefaultWebSecurityExpress
 		return ec;
 	}
 }
+*/

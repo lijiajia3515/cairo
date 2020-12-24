@@ -1,3 +1,4 @@
+/*
 package com.hfhk.cairo.security.oauth2.expression;
 
 import org.aopalliance.intercept.MethodInvocation;
@@ -17,3 +18,5 @@ public class CairoMethodSecurityExpressionHandler extends OAuth2MethodSecurityEx
 		return ec;
 	}
 }
+
+*/
