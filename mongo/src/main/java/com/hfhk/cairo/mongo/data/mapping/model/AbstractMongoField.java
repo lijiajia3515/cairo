@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public abstract class AbstractMongoField {
 	private final AbstractMongoField PARENT;
-	private final String SELF;
+	public final String SELF;
 
 	public AbstractMongoField() {
 		PARENT = null;
