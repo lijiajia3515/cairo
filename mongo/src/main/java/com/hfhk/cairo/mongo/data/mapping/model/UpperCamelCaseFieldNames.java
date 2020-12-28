@@ -6,25 +6,25 @@ package com.hfhk.cairo.mongo.data.mapping.model;
 public abstract class UpperCamelCaseFieldNames {
 	public static final String _ID = "_id";
 
-	public static final Metadata Metadata = new Metadata();
+	public static final Metadata METADATA = new Metadata();
 
 	public static class Metadata {
-		public final Created Created = new Created();
+		public final Created CREATED = new Created();
 		public final LastModified LastModified = new LastModified();
 
-		public final String Sort = "Sort";
-		public final String Version = "Version";
-		public final String Deleted = "Deleted";
+		public final String SORT = "Sort";
+		public final String VERSION = "Version";
+		public final String DELETED = "Deleted";
 
 		public static class Created {
-			public final String uid = "Uid";
-			public final String At = "At";
+			public final String UID = "Uid";
+			public final String AT = "At";
 
 		}
 
 		public static class LastModified {
-			public final String uid = "Uid";
-			public final String At = "At";
+			public final String UID = "Uid";
+			public final String AT = "At";
 
 		}
 
