@@ -1,8 +1,8 @@
 package com.hfhk.cairo.core.result;
 
-import com.hfhk.cairo.core.exception.BusinessException;
 import com.hfhk.cairo.core.business.Business;
 import com.hfhk.cairo.core.business.DefaultBusiness;
+import com.hfhk.cairo.core.exception.BusinessException;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -13,7 +13,7 @@ import java.util.Optional;
  */
 @Getter
 @ToString
-public class BusinessResult<T> implements Result<T> {
+public class BusinessResult<T> implements Result {
 	/**
 	 * 成功状态
 	 */
@@ -91,84 +91,84 @@ public class BusinessResult<T> implements Result<T> {
 	/**
 	 * <p>build.</p>
 	 */
-	public static Result<Object> build(Business business) {
+	public static BusinessResult<?> build(Business business) {
 		return new BusinessResult<>(business);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public static <D> Result<D> build(Business business, D data) {
+	public static <D> BusinessResult<D> build(Business business, D data) {
 		return new BusinessResult<>(business, data);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public static Result<Object> build(boolean success, String code, String msg) {
+	public static BusinessResult<Object> build(boolean success, String code, String msg) {
 		return new BusinessResult<>(success, code, msg);
 	}
 
 	/**
 	 * <p>build.</p>
 	 */
-	public static <D> Result<D> build(boolean success, String code, String msg, D data) {
+	public static <D> BusinessResult<D> build(boolean success, String code, String msg, D data) {
 		return new BusinessResult<>(success, code, msg, data);
 	}
 
 	/**
 	 * <p>buildSuccess.</p>
 	 */
-	public static Result<Object> buildSuccess() {
+	public static BusinessResult<Object> buildSuccess() {
 		return buildSuccess(Optional.empty().orElse(null));
 	}
 
 	/**
 	 * <p>buildSuccess.</p>
 	 */
-	public static <D> Result<D> buildSuccess(D data) {
+	public static <D> BusinessResult<D> buildSuccess(D data) {
 		return build(DefaultBusiness.Success, data);
 	}
 
 	/**
 	 * <p>buildFailed.</p>
 	 */
-	public static Result<Object> buildFailed() {
+	public static BusinessResult<Object> buildFailed() {
 		return buildFailed(Optional.empty().orElse(null));
 	}
 
 	/**
 	 * <p>buildFailed.</p>
 	 */
-	public static <D> Result<D> buildFailed(D data) {
+	public static <D> BusinessResult<D> buildFailed(D data) {
 		return build(DefaultBusiness.Failed, data);
 	}
 
 	/**
 	 * <p>buildUnknown.</p>
 	 */
-	public static Result<Object> buildUnknown() {
+	public static BusinessResult<Object> buildUnknown() {
 		return buildFailed(Optional.empty().orElse(null));
 	}
 
 	/**
 	 * <p>buildUnknown.</p>
 	 */
-	public static <D> Result<D> buildUnknown(D data) {
+	public static <D> BusinessResult<D> buildUnknown(D data) {
 		return build(DefaultBusiness.Unknown, data);
 	}
 
 	/**
 	 * <p>buildEx.</p>
 	 */
-	public static Result<Object> buildEx(BusinessException statusEx) {
+	public static BusinessResult<Object> buildEx(BusinessException statusEx) {
 		return new BusinessResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), statusEx.getData());
 	}
 
 	/**
 	 * <p>buildEx.</p>
 	 */
-	public static <D> Result<D> buildError(BusinessException statusEx, D data) {
+	public static <D> BusinessResult<D> buildError(BusinessException statusEx, D data) {
 		return new BusinessResult<>(statusEx.getStatus().success(), statusEx.getStatus().code(), statusEx.getMessage(), data);
 	}
 }
