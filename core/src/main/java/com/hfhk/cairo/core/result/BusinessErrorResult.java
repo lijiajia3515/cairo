@@ -15,6 +15,8 @@ import java.util.List;
 public class BusinessErrorResult implements Result, Business {
 	private String code;
 	private String message;
+	private Object trace;
+	private List<Object> warnings;
 	private List<Object> errors;
 
 	@Override

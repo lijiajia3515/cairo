@@ -3,7 +3,6 @@ package com.hfhk.cairo.security.oauth2.server.resource.web;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hfhk.cairo.core.business.Business;
 import com.hfhk.cairo.core.result.BusinessResult;
-import com.hfhk.cairo.core.result.Result;
 import com.hfhk.cairo.security.status.AuthBusiness;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +18,6 @@ import org.springframework.security.oauth2.server.resource.InvalidBearerTokenExc
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.util.StringUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -71,7 +69,7 @@ public class CairoBearerTokenAuthenticationEntryPoint implements AuthenticationE
 		response.setStatus(httpStatus.value());
 
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-		Result<String> build = BusinessResult.build(status, authException.getMessage());
+		BusinessResult<String> build = BusinessResult.build(status, authException.getMessage());
 		try {
 			response.getWriter().write(objectMapper.writeValueAsString(build));
 		} catch (IOException e) {

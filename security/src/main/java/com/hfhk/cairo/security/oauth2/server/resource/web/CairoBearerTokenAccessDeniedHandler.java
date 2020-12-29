@@ -59,7 +59,7 @@ public final class CairoBearerTokenAccessDeniedHandler implements AccessDeniedHa
 		response.setStatus(HttpStatus.FORBIDDEN.value());
 
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-		Result<String> returnValue = BusinessResult.build(AuthBusiness.AccessDenied, accessDeniedException.getMessage());
+		BusinessResult<String> returnValue = BusinessResult.build(AuthBusiness.AccessDenied, accessDeniedException.getMessage());
 		try {
 			response.getWriter().write(objectMapper.writeValueAsString(returnValue));
 		} catch (IOException e) {
