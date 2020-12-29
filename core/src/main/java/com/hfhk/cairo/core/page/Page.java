@@ -1,6 +1,5 @@
 package com.hfhk.cairo.core.page;
 
-import com.hfhk.cairo.core.request.PageRequest;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

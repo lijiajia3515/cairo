@@ -1,4 +1,4 @@
-package com.hfhk.cairo.core.request;
+package com.hfhk.cairo.core.page;
 
 /**
  * 默认分页 请求参数

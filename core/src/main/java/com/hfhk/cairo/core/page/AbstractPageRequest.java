@@ -1,4 +1,4 @@
-package com.hfhk.cairo.core.request;
+package com.hfhk.cairo.core.page;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
