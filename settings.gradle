@@ -1,12 +1,11 @@
 rootProject.name = 'cairo'
 
-include 'core'
+include 'cairo-core'
 
-include 'mongo'
-include 'domain'
+include 'cairo-mongo'
 
-include 'security'
+include 'cairo-domain'
 
-include 'client'
+include 'cairo-security'
 
-// include 'gateway'
+include 'cairo-client'

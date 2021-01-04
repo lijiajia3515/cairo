@@ -13,6 +13,6 @@ dependencies {
   compile 'org.springframework:spring-web'
 
   // cairo
-  compile project(":security")
-  compile project(":domain")
+  compile project(":cairo-security")
+  compile project(":cairo-domain")
 }
