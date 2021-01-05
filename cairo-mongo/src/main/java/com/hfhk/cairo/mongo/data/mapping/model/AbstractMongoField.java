@@ -8,7 +8,7 @@ public abstract class AbstractMongoField {
 
 	public AbstractMongoField() {
 		PARENT = null;
-		SELF = "";
+		SELF = null;
 	}
 
 	public AbstractMongoField(AbstractMongoField PARENT, String prefix) {
