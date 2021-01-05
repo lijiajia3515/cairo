@@ -17,7 +17,7 @@ public abstract class AbstractMongoField {
 	}
 
 	public String field(String fieldName) {
-		return SELF.isBlank() ? fieldName : Optional.ofNullable(fieldName).map(x -> SELF.concat(".").concat(x)).orElse(SELF);
+		return Optional.ofNullable(SELF).map(x -> x.concat(".").concat(fieldName)).orElse(fieldName);
 	}
 
 }
