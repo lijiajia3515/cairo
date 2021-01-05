@@ -9,7 +9,7 @@ import org.springframework.data.domain.Sort;
  *
  * @param <T> 真实参数对象
  */
-public abstract class AbstractPageRequest<T> {
+public abstract class AbstractPage<T> {
 
 	private int page = 0;
 	private int size = 15;

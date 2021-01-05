@@ -3,6 +3,6 @@ package com.hfhk.cairo.core.page;
 /**
  * 默认分页 请求参数
  */
-public class PageRequest extends AbstractPageRequest<PageRequest> {
+public class PageParam extends AbstractPage<PageParam> {
 
 }

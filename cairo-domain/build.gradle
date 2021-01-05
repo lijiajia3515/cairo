@@ -1,5 +1,9 @@
 dependencies {
   compile project(":cairo-core")
+
+  // validation
+  compile 'jakarta.validation:jakarta.validation-api'
+
   compile 'org.springframework.data:spring-data-commons'
 
 }
