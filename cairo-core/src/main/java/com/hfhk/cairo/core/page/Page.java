@@ -2,6 +2,7 @@ package com.hfhk.cairo.core.page;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.springframework.data.domain.PageRequest;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -30,6 +31,18 @@ public class Page<T> implements Serializable {
 	public Page(int page, int size, List<T> contents, long total) {
 		this.page = page;
 		this.size = size;
+		this.contents = contents;
+		this.total = total;
+	}
+
+	public Page(PageRequest page) {
+		this.page = page.getPageNumber();
+		this.size = page.getPageSize();
+	}
+
+	public Page(PageRequest page, List<T> contents, long total) {
+		this.page = page.getPageNumber();
+		this.size = page.getPageSize();
 		this.contents = contents;
 		this.total = total;
 	}
