@@ -17,7 +17,7 @@ public class Page<T> implements Serializable {
 	private int page = 0;
 	private int size = 10;
 	private long total = 0L;
-	private List<T> contents = Collections.emptyList();
+	private List<? extends T> contents = Collections.emptyList();
 
 	public Page() {
 
@@ -28,7 +28,7 @@ public class Page<T> implements Serializable {
 		this.size = size;
 	}
 
-	public Page(int page, int size, List<T> contents, long total) {
+	public Page(int page, int size, List<? extends T> contents, long total) {
 		this.page = page;
 		this.size = size;
 		this.contents = contents;
@@ -40,7 +40,7 @@ public class Page<T> implements Serializable {
 		this.size = page.getPageSize();
 	}
 
-	public Page(PageRequest page, List<T> contents, long total) {
+	public Page(PageRequest page, List<? extends T> contents, long total) {
 		this.page = page.getPageNumber();
 		this.size = page.getPageSize();
 		this.contents = contents;
@@ -52,14 +52,14 @@ public class Page<T> implements Serializable {
 		this.size = page.getSize();
 	}
 
-	public Page(AbstractPage<?> page, List<T> contents, long total) {
+	public Page(AbstractPage<?> page, List<? extends T> contents, long total) {
 		this.contents = contents;
 		this.page = page.getPage();
 		this.size = page.getSize();
 		this.total = total;
 	}
 
-	public Stream<T> stream() {
+	public Stream<? extends T> stream() {
 		return contents.stream();
 	}
 
@@ -70,8 +70,8 @@ public class Page<T> implements Serializable {
 	 * @param <R>    new type
 	 * @return new page
 	 */
-	public <R> Page<R> convert(Function<? super T, R> mapper) {
-		List<R> x = contents.stream().map(mapper).collect(Collectors.toList());
+	public <R> Page<? extends R> convert(Function<? super T, ? extends R> mapper) {
+		List<? extends R> x = contents.stream().map(mapper).collect(Collectors.toList());
 		return new Page<>(page, size, x, total);
 	}
 }
