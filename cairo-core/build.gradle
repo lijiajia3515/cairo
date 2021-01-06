@@ -1,10 +1,12 @@
-plugins {
-  id 'maven-publish'
-}
 
 dependencies {
+  // validation
+  compile 'jakarta.validation:jakarta.validation-api'
+
+  // jackson
   compile 'com.fasterxml.jackson.core:jackson-annotations'
 
+  // spring data
   compile 'org.springframework.data:spring-data-commons'
 
   compile "cn.hutool:hutool-all:${hutoolVersion}"
