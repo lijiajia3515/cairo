@@ -1,5 +1,6 @@
 package com.hfhk.cairo.core.page;
 
+import lombok.Builder;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -12,7 +13,9 @@ import org.springframework.data.domain.Sort;
 public abstract class AbstractPage<T> {
 
 	private int page = 0;
+
 	private int size = 15;
+
 	private Sort sort = Sort.unsorted();
 
 	public int getPage() {
@@ -35,9 +38,9 @@ public abstract class AbstractPage<T> {
 		return (T) this;
 	}
 
-	public Sort getSort() {
-		return sort;
-	}
+	// public Sort getSort() {
+	// 	return sort;
+	// }
 
 	@SuppressWarnings("unchecked")
 	public T setSort(Sort sort) {
