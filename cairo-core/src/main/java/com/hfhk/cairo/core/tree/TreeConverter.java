@@ -25,10 +25,10 @@ public class TreeConverter {
 	public static <ID, T, Node extends TreeNode<ID, T>> List<Node> build(Collection<Node> nodes, ID root, Comparator<Node> comparator) {
 		List<Node> rootNodes = Optional.ofNullable(root)
 			.map(r -> nodes.stream()
-				.filter(node -> node.parentId() != null && node.parentId().equals(r))
+				.filter(node -> node.parent() != null && node.parent().equals(r))
 			)
 			.orElse(nodes.stream()
-				.filter(node -> node.parentId() == null)
+				.filter(node -> node.parent() == null)
 			)
 			.sorted(comparator)
 			.collect(toList());
@@ -49,7 +49,7 @@ public class TreeConverter {
 	@SuppressWarnings("unchecked")
 	private static <Node extends TreeNode> Node findChildren(Node node, Collection<Node> nodes) {
 		nodes.stream()
-			.filter(node2 -> node.id().equals(node2.parentId()))
+			.filter(node2 -> node.id().equals(node2.parent()))
 			.forEach(node2 -> node.subs().add(findChildren(node2, nodes)));
 		return node;
 	}

@@ -18,11 +18,11 @@ public interface TreeNode<ID, T> extends Serializable {
 	ID id();
 
 	/**
-	 * 上级 id
+	 * 上级
 	 *
-	 * @return 上级id
+	 * @return 上级
 	 */
-	ID parentId();
+	ID parent();
 
 	/**
 	 * 子集
