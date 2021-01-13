@@ -27,9 +27,9 @@ public abstract class AbstractUpperCamelCaseField extends AbstractMongoField {
 		public final Created CREATED = new Created(this, "Created");
 		public final LastModified LAST_MODIFIED = new LastModified(this, "LastModified");
 
-		public final String SORT = "Sort";
-		public final String VERSION = "Version";
-		public final String DELETED = "Deleted";
+		public final String SORT = field("Sort");
+		public final String VERSION = field("Version");
+		public final String DELETED = field("Deleted");
 
 		public static class Created extends AbstractMongoField {
 			public final String UID = field("Uid");
@@ -45,8 +45,8 @@ public abstract class AbstractUpperCamelCaseField extends AbstractMongoField {
 		}
 
 		public static class LastModified extends AbstractMongoField {
-			public final String UID = "Uid";
-			public final String AT = "At";
+			public final String UID = field("Uid");
+			public final String AT = field("At");
 
 			public LastModified() {
 				super();
