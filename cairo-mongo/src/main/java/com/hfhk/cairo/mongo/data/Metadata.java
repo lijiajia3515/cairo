@@ -1,6 +1,6 @@
 package com.hfhk.cairo.mongo.data;
 
-import com.hfhk.cairo.core.Constants;
+import com.hfhk.cairo.core.CoreConstants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,7 +33,7 @@ public class Metadata {
 	 * 排序
 	 */
 	@Builder.Default
-	private Long sort = Constants.SNOWFLAKE.nextId();
+	private Long sort = CoreConstants.SNOWFLAKE.nextId();
 
 	/**
 	 * 版本
