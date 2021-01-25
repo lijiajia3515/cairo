@@ -1,5 +1,5 @@
 dependencies {
-  compile project(":cairo-core")
+  compile project(":cairo-domain")
   implementation 'org.springframework.data:spring-data-commons'
   implementation 'org.springframework.security:spring-security-core'
 }
