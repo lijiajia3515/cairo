@@ -14,6 +14,6 @@ dependencies {
 
   // security
   // implementation 'org.springframework.cloud:spring-cloud-starter-security'
-  implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+  // implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
   // implementation 'org.springframework.security:spring-security-oauth2-client'
 }
