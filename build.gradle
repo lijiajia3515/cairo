@@ -8,8 +8,8 @@ plugins {
 }
 
 allprojects {
-  group = 'com.hfhk.cairo'
-  description = "Hao Fang Software Projects"
+  group = 'com.lijiajia3515.cairo'
+  description = "LiJiaJia3515 Cairo Projects"
 
   apply from: "${rootDir}/gradle/repositories.gradle"
 
