@@ -7,11 +7,17 @@ import lombok.experimental.Accessors;
 @Getter
 @Accessors(chain = true, fluent = true)
 public enum ClientBusiness implements Business {
-	Required(false, "client 不能为空");
+	Required("clientRequired"),
+	NotExists("ClientNotExists");
 
 	private final String code = "Client".concat(name());
 	private final boolean success;
 	private final String message;
+
+	ClientBusiness(String message) {
+		this.success = false;
+		this.message = message;
+	}
 
 	ClientBusiness(boolean success, String message) {
 		this.success = success;
