@@ -1,7 +1,7 @@
 package com.lijiajia3515.cairo.security.exception;
 
 import com.lijiajia3515.cairo.core.exception.BusinessException;
-import com.lijiajia3515.cairo.security.status.ClientBusiness;
+import com.lijiajia3515.cairo.security.ClientBusiness;
 
 public class ClientRequiredException extends BusinessException {
 

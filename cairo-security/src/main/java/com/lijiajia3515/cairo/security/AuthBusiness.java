@@ -1,4 +1,4 @@
-package com.lijiajia3515.cairo.security.status;
+package com.lijiajia3515.cairo.security;
 
 import com.lijiajia3515.cairo.core.business.Business;
 import lombok.Getter;
@@ -21,6 +21,7 @@ public enum AuthBusiness implements Business {
 	 * 访问凭证错误
 	 */
 	AccessBad("访问凭证-错误"),
+
 	/**
 	 * 访问
 	 */

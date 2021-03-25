@@ -2,7 +2,7 @@ package com.lijiajia3515.cairo.security.oauth2.server.resource.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lijiajia3515.cairo.core.result.BusinessResult;
-import com.lijiajia3515.cairo.security.status.AuthBusiness;
+import com.lijiajia3515.cairo.security.AuthBusiness;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

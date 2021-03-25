@@ -1,4 +1,4 @@
-package com.lijiajia3515.cairo.security.status;
+package com.lijiajia3515.cairo.security;
 
 import com.lijiajia3515.cairo.core.business.Business;
 import lombok.Getter;
