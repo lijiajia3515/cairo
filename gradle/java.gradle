@@ -1,7 +1,7 @@
 // java
 apply plugin: 'java'
-sourceCompatibility = "${javaVersion}"
-targetCompatibility = "${javaVersion}"
+sourceCompatibility = 11
+targetCompatibility = 11
 
 tasks.withType(Javadoc) {
   options.addStringOption('Xdoclint:none', '-quiet')
