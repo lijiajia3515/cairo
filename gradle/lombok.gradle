@@ -6,8 +6,8 @@ configurations {
 }
 
 dependencies {
+  compileOnly 'org.slf4j:slf4j-api'
   compileOnly 'org.projectlombok:lombok'
   annotationProcessor 'org.projectlombok:lombok'
 
-  compile 'org.slf4j:slf4j-api'
 }

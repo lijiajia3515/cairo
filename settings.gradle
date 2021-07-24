@@ -1,3 +1,18 @@
+pluginManagement {
+  plugins {
+
+  }
+
+  resolutionStrategy {
+
+  }
+
+  repositories {
+    maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+    gradlePluginPortal()
+  }
+}
+
 rootProject.name = 'cairo'
 
 include 'cairo-core'
@@ -9,3 +24,5 @@ include 'cairo-domain'
 include 'cairo-security'
 
 include 'cairo-client'
+
+

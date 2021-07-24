@@ -1,15 +1,9 @@
-
 dependencies {
-  // validation
-  compile 'jakarta.validation:jakarta.validation-api'
 
-  // jackson
-  compile 'com.fasterxml.jackson.core:jackson-databind'
+  // api 'org.springframework.boot:spring-boot-starter-json'
+  api 'com.fasterxml.jackson.core:jackson-databind'
 
-  // spring data
-  compile 'org.springframework.data:spring-data-commons'
+  api 'org.springframework.data:spring-data-commons'
 
-  compile "cn.hutool:hutool-all:${hutoolVersion}"
-
-
+  api "cn.hutool:hutool-all:${hutoolVersion}"
 }

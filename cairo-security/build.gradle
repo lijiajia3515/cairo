@@ -1,12 +1,12 @@
 dependencies {
-  compile project(":cairo-domain")
-  // web
-  compile 'org.apache.tomcat.embed:tomcat-embed-core'
+  api project(':cairo-domain')
+
+  // runtime
+  api 'org.apache.tomcat.embed:tomcat-embed-core'
 
   // security
-  compile 'org.springframework.security:spring-security-core'
-  compile 'org.springframework.security:spring-security-oauth2-jose'
-  compile 'org.springframework.security:spring-security-oauth2-resource-server'
+  api'org.springframework.security:spring-security-oauth2-jose'
+  api 'org.springframework.security:spring-security-oauth2-resource-server'
 
 
   // implementation 'org.springframework.cloud:spring-cloud-starter-security'

@@ -6,10 +6,13 @@ plugins {
   id 'io.spring.dependency-management' version "${dependencyManagementVersion}" apply false
   id 'org.springframework.boot' version "${springBootVersion}" apply false
 }
-
 allprojects {
   group = 'com.lijiajia3515.cairo'
   description = "LiJiaJia3515 Cairo Projects"
+
+  configurations {
+
+  }
 
   apply from: "${rootDir}/gradle/repositories.gradle"
 

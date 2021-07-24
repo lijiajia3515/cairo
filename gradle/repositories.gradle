@@ -1,15 +1,8 @@
 repositories {
-
-  maven {
-    url 'https://maven.aliyun.com/repository/public'
-  }
-
-  maven {
-    url 'https://maven.aliyun.com/repository/spring'
-  }
-  maven {
-    url 'https://repo.spring.io/libs-milestone'
-  }
+  mavenLocal()
+  maven { url 'https://maven.aliyun.com/repository/public' }
+  maven { url 'https://maven.aliyun.com/repository/spring'}
+  maven { url 'https://repo.spring.io/libs-milestone' }
 
   if (project.hasProperty('repository.release.url')) {
     maven {
@@ -34,5 +27,4 @@ repositories {
     }
   }
   mavenCentral()
-  mavenLocal()
 }

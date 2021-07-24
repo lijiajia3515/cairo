@@ -1,15 +1,14 @@
 dependencies {
   // cairo
-  compile project(":cairo-security")
-  compile project(":cairo-domain")
+  api project(':cairo-security')
 
   // feign
-  compile 'io.github.openfeign:feign-core'
-  compile 'org.springframework.cloud:spring-cloud-openfeign-core'
+  api 'io.github.openfeign:feign-core'
+  api 'org.springframework.cloud:spring-cloud-openfeign-core'
 
   // web
-  compile 'org.apache.tomcat.embed:tomcat-embed-core'
-  compile 'org.springframework:spring-web'
+  api 'org.apache.tomcat.embed:tomcat-embed-core'
+  api 'org.springframework:spring-web'
 
   // security
   // implementation 'org.springframework.cloud:spring-cloud-starter-security'

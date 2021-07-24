@@ -9,7 +9,7 @@ import lombok.ToString;
 import java.util.Optional;
 
 /**
- * REST API 结果实现类
+ * REST implementation 结果实现类
  */
 @Getter
 @ToString
