@@ -1,0 +1,17 @@
+[versions]
+# groovy = '3.0.5'
+cairo = '2021.8.0'
+
+[libraries]
+cairo-core = {group = 'com.hfhk.cairo',name = 'cairo-core',version.ref = cairo}
+cairo-domain = {group = 'com.hfhk.cairo',name = 'cairo-domain',version.ref = cairo}
+cairo-mongodb = {group = 'com.hfhk.cairo',name = 'cairo-mongodb',version.ref = cairo}
+cairo-security = {group = 'com.hfhk.cairo',name = 'cairo-security',version.ref = cairo}
+cairo-client = {group = 'com.hfhk.cairo',name = 'cairo-client',version.ref = cairo}
+
+#commons-lang3 = { group = 'org.apache.commons',
+#                  name = 'commons-lang3',
+#                  version = { strictly = '[3.8,4.0[', prefer='3.9' } }
+
+[bundles]
+cairo = ['cairo-core','cairo-domain','cairo-mongodb','cairo-security','cairo-client']

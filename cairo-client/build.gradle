@@ -1,17 +1,15 @@
 dependencies {
   // cairo
-  api project(':cairo-security')
+  api(project(":cairo-security"))
+  api(project(":cairo-domain"))
 
   // feign
-  api 'io.github.openfeign:feign-core'
-  api 'org.springframework.cloud:spring-cloud-openfeign-core'
+  api(group: 'io.github.openfeign', name: 'feign-core')
+  api(group: 'org.springframework.cloud', name: 'spring-cloud-openfeign-core')
+  api(group: 'io.github.openfeign', name: 'feign-okhttp')
 
   // web
-  api 'org.apache.tomcat.embed:tomcat-embed-core'
-  api 'org.springframework:spring-web'
+  api(group: 'org.apache.tomcat.embed', 'name': 'tomcat-embed-core')
+  api(group: 'org.springframework', name: 'spring-webmvc')
 
-  // security
-  // implementation 'org.springframework.cloud:spring-cloud-starter-security'
-  // implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
-  // implementation 'org.springframework.security:spring-security-oauth2-client'
 }

@@ -1,7 +1,7 @@
 // maven publish config
 apply plugin: "maven-publish"
 ext {
-  versionRelease = !version.endsWith('SNAPSHOT')
+  versionRelease = !(version.endsWith('snapshot') || version.endsWith('SNAPSHOT'))
 }
 publishing {
   repositories {

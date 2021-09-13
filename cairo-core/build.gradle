@@ -1,9 +1,15 @@
 dependencies {
+  // validation
+  api(group: 'org.hibernate.validator', name: 'hibernate-validator')
 
-  // api 'org.springframework.boot:spring-boot-starter-json'
-  api 'com.fasterxml.jackson.core:jackson-databind'
+  // jackson
+  api(group: 'com.fasterxml.jackson.core', name: 'jackson-databind')
+  api(group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310')
 
-  api 'org.springframework.data:spring-data-commons'
+  // spring data
+  api(group: 'org.springframework.data', name: 'spring-data-commons')
 
-  api "cn.hutool:hutool-all:${hutoolVersion}"
+  api(group: 'cn.hutool', name: 'hutool-all', version: "${hutoolVersion}")
+
+
 }

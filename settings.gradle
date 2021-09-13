@@ -2,7 +2,6 @@ pluginManagement {
   plugins {
 
   }
-
   resolutionStrategy {
 
   }
@@ -13,16 +12,13 @@ pluginManagement {
   }
 }
 
+enableFeaturePreview 'VERSION_CATALOGS'
+enableFeaturePreview 'TYPESAFE_PROJECT_ACCESSORS'
+
 rootProject.name = 'cairo'
-
 include 'cairo-core'
-
-include 'cairo-mongo'
-
+include 'cairo-mongodb'
 include 'cairo-domain'
-
 include 'cairo-security'
 
 include 'cairo-client'
-
-

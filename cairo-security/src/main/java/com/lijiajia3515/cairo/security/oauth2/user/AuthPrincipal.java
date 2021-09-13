@@ -19,7 +19,7 @@ public class AuthPrincipal extends Jwt {
 	}
 
 	/**
-	 * @param jwt jwt
+	 * @param jwt  jwt
 	 * @param user user
 	 */
 	public AuthPrincipal(Jwt jwt, User user) {

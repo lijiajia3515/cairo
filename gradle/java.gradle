@@ -1,8 +1,6 @@
 // java
 apply plugin: 'java'
 apply plugin: 'java-library'
-sourceCompatibility = 11
-targetCompatibility = 11
 
 tasks.withType(Javadoc) {
   options.addStringOption('Xdoclint:none', '-quiet')
@@ -11,6 +9,11 @@ tasks.withType(Javadoc) {
 }
 
 java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of("${javaVersion}")
+    // vendor = JvmVendorSpec.ORACLE
+  }
+
   withJavadocJar()
   withSourcesJar()
 }
@@ -20,3 +23,9 @@ javadoc {
     options.addBooleanOption('html5', true)
   }
 }
+
+dependencies {
+  compileOnlyApi 'com.google.code.findbugs:jsr305:+'
+  compileOnlyApi 'com.google.code.findbugs:annotations:+'
+}
+
