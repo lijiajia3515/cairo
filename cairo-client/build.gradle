@@ -1,7 +1,6 @@
 dependencies {
   // cairo
   api(project(":cairo-security"))
-  api(project(":cairo-domain"))
 
   // feign
   api(group: 'io.github.openfeign', name: 'feign-core')
@@ -12,4 +11,5 @@ dependencies {
   api(group: 'org.apache.tomcat.embed', 'name': 'tomcat-embed-core')
   api(group: 'org.springframework', name: 'spring-webmvc')
 
+  api 'org.springframework.security.oauth:spring-security-oauth2:2.5.1.RELEASE'
 }
