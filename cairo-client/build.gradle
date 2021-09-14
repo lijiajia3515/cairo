@@ -11,5 +11,5 @@ dependencies {
   api(group: 'org.apache.tomcat.embed', 'name': 'tomcat-embed-core')
   api(group: 'org.springframework', name: 'spring-webmvc')
 
-  api 'org.springframework.security.oauth:spring-security-oauth2:2.5.1.RELEASE'
+  api(group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.5.1.RELEASE')
 }
